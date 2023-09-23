@@ -35,8 +35,9 @@ def addNewBook(request):
     if(request.method == "POST"):
         bookTitle = request.POST.get("title")
         isbn = request.POST.get("isbn")
-        mrp = request.POST.get("mrp")
         sellingprice = request.POST.get("sellPrice")
-        newBook = Book(title = bookTitle, ISBN_Number = isbn, MRP_price=mrp, selling_Price = sellingprice)
+        category = request.POST.get("category")
+        author = request.POST.get("author")
+        newBook = Book(title = bookTitle, ISBN_Number = isbn, selling_Price = sellingprice, category=category, author = author)
         newBook.save()
     return render(request, 'newBook.html')

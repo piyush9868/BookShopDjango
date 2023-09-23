@@ -8,18 +8,28 @@
         <input type="text" class="form-control" id="title" name="title" placeholder="Enter book title" />
       </div>
       <div class="form-group">
+        <label for="author">Author Name:</label>
+        <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name:" />
+      </div>
+      <div class="form-group">
         <label for="isbn">Enter ISBN number:</label>
         <input type="text" maxlength="17" class="form-control" id="isbn" name="isbn" placeholder="ISBN" />
       </div>
       <div class="form-group">
-        <label for="isbn">Enter MRP of the book:</label>
-        <input type="number" class="form-control" id="mrp" name="mrp" placeholder="MRP in rupees" />
+        <label for="category">What is the category of the book?</label>
+        <select class="form-control" name="category">
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction"/>Non-Fiction</option>
+            <option value="Horror"/>Horror</option>
+            <option value="Thriller"/>Thriller</option>
+            <option value="Children Books"/>Children Books</option>
+        </select>
       </div>
       <div class="form-group">
         <label for="isbn">Enter selling price of the book:</label>
         <input type="number" class="form-control" id="sellPrice" name="sellPrice" placeholder="Selling price?" />
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary mt-2 mb-2">Submit</button>
     </form>
   </div>
 {% endblock %}

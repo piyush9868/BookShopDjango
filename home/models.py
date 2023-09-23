@@ -15,8 +15,10 @@ class Contact(models.Model):
 
 #book object
 class Book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=500)
     ISBN_Number = models.CharField(max_length=13, primary_key=True, default="0-1339-5019-0")
-    MRP_price = models.IntegerField()
     selling_Price = models.IntegerField()
+    category = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, default="")
+    image_url = models.CharField(max_length=500, default="")
 
