@@ -2,14 +2,32 @@ from django.shortcuts import render, HttpResponse
 from datetime import date
 from home.models import Contact, Book
 
-
 # Create your views here.
 
 def index(request):
     
-    books = Book.objects.all();
-    print(books)
+    books = Book.objects.all()
     return render(request, 'index.html', {'books' : books})
+
+def categoryFilterView(request):
+
+    path = request.path
+    print(path)
+    categoryString = ""
+    if(path == '/fiction'):
+        categoryString = 'Fiction'
+    elif(path == '/non-fiction'):
+        categoryString = 'Non-Fiction'
+    elif(path == '/horror'):
+        categoryString = 'Horror'
+    elif(path == '/children-books'):
+        categoryString = 'Children Books'
+    elif(path == '/thriller'):
+        categoryString = 'Thriller'
+    # return HttpResponse(categoryString)
+    books = Book.objects.raw('select * from home_book where category = %s', [categoryString])
+    return render(request, 'index.html', {'books' : books})
+
 
 def about(request):
     return render(request, 'about.html')

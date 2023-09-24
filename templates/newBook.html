@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-  <div class="container" style="background-color:bisque;">
+  <div class="container" style="background-color:bisque; margin-top: 60px;">
     <form action="/add-new-book" method="post">
       {% csrf_token %}
       <div class="form-group">

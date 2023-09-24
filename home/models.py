@@ -7,6 +7,7 @@ from uuid import uuid3
 # Create your models here.
 class Contact(models.Model):
     id = models.IntegerField(primary_key=True)
+    timestamp = models.DateTimeField
     name = models.CharField(max_length=122)
     email = models.CharField(max_length=122)
     phone = models.CharField(max_length=122)
